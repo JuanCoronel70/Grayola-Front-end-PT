@@ -20,12 +20,12 @@ const Home: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="w-full md:w-3/10 h-1/2 md:h-full flex items-center justify-center p-10">
+        <div className="animate-slidein opacity-0 [--slidein-delay:300ms] ... w-full md:w-3/10 h-1/2 md:h-full flex items-center justify-center p-10">
           <RegisterForm />
         </div>
       </main>
 
-      <div className="absolute top-0 w-full flex items-center justify-center pt-10">
+      <div className="animate-slidein opacity-0 [--slidein-delay:300ms] ... absolute top-0 w-full flex items-center justify-center pt-10">
         <img src="/images/banner.PNG" alt="Banner" className="max-h-80" />
       </div>
     </div>
