@@ -13,20 +13,20 @@ const Home: React.FC = () => {
       <main className="flex flex-col md:flex-row w-full h-screen">
       
         <div className="w-full md:w-7/10 h-1/2 md:h-full flex items-center justify-center text-white text-center p-10">
-          <div className='animate-slidein opacity-0 [--slidein-delay:300ms] ... text-left'>
+          <div className='animate-slidein opacity-0 [--slidein-delay:500ms] ... text-left'>
             <h1 className="text-7xl font-bold mb-4">¡Tu lo imaginas, nosotros lo hacemos realidad!</h1>
             <p className="text-2xl">
               Has tus pedidos de diseño con una simple suscripción en Grayola.
             </p>
           </div>
         </div>
-        <div className="animate-slidein opacity-0 [--slidein-delay:300ms] ... w-full md:w-3/10 h-1/2 md:h-full flex items-center justify-center p-10">
+        <div className="animate-slidein opacity-0 [--slidein-delay:500ms] ... w-full md:w-3/10 h-1/2 md:h-full flex items-center justify-center p-10">
           <RegisterForm />
         </div>
       </main>
 
       <div className="animate-slidein opacity-0 [--slidein-delay:300ms] ... absolute top-0 w-full flex items-center justify-center pt-10">
-        <img src="/images/banner.PNG" alt="Banner" className="max-h-80" />
+        <img src="/images/banner.PNG" alt="Banner" className="max-h-10" />
       </div>
     </div>
   );
