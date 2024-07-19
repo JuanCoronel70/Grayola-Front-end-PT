@@ -49,7 +49,7 @@ const Dashboard: React.FC = () => {
         </div>
         {userRole === 'authenticated' ? (
           <div>
-            <p className="fixed-else mb-4 italic">Con Grayola puedes hacer tus diseños realidad. ¡Realiza tu primer pedido!</p>
+            <p className="fixed-else mb-4 italic font-bold">Con Grayola puedes hacer tus diseños realidad. ¡Realiza tu primer pedido!</p>
             <button
               onClick={handleOrder}
               className="fixed-button"

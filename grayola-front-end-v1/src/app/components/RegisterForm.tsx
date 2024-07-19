@@ -67,7 +67,13 @@ const RegisterForm: React.FC = () => {
         isValid = false;
       } else {
         localStorage.setItem('userRole', user.role); // Store user role
-        router.push('/dashboard'); // Redirect to dashboard
+        if (user.role === 'designer') {
+          router.push('/project_design'); // Redirect to project_design if role is designer
+        } else if (user.role === 'project_manager') {
+          router.push('/project_all'); // Redirect to project_all if role is project_manager
+        } else {
+          router.push('/dashboard'); // Redirect to dashboard for other roles
+        }
       }
     } else {
       // Registration validation
@@ -83,6 +89,12 @@ const RegisterForm: React.FC = () => {
         setErrors((prev) => ({
           ...prev,
           email: 'Debe ingresar un correo electrónico válido.',
+        }));
+        isValid = false;
+      } else if (users.some((user) => user.email === formData.email)) {
+        setErrors((prev) => ({
+          ...prev,
+          email: 'Este correo electrónico ya está registrado.',
         }));
         isValid = false;
       }
@@ -116,9 +128,9 @@ const RegisterForm: React.FC = () => {
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg w-full transform transition-transform hover:scale-105 hover:duration-300 hover:ease-out hover:delay-100">
       <h2 className="text-2xl font-bold mb-6 text-gray-800">
-        {isLogin ? 'Iniciar sesión' : 'Regístrate ahora - '}
+        {isLogin ? 'Iniciar sesión - ' : 'Regístrate ahora - '}
         <span className="italic underline">
-          {isLogin ? '¡Inicia sesión!' : '¡Es gratis!'}
+          {isLogin ? '¡Has tu pedido ahora!' : '¡Es gratis!'}
         </span>
       </h2>
       <form onSubmit={handleSubmit}>
